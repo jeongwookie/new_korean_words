@@ -1,1 +1,2 @@
-# New Korean Words from Portal News Headlines
+# New Korean Word Corpus
+
