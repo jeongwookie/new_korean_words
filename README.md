@@ -93,5 +93,14 @@ print(NEW_WORDS["하스스톤"])
 #  사우스햄프턴,,,,NNG,*,T,사우스햄프턴,*,*,*,*
 ~~~
 
+## Reference
 
+본 repository 는 아래와 같은 reference의 도움을 받았습니다. 함께 사용하시면 더 좋습니다 ^^
 
+### soynlp
+한국어 분석을 위한 pure python code 입니다. 학습데이터를 이용하지 않으면서 데이터에 존재하는 단어를 찾거나, 문장을 단어열로 분해, 혹은 품사 판별을 할 수 있는 비지도학습 접근법을 지향합니다.
+- https://github.com/lovit/soynlp
+
+### Mecab 형태소 분석기
+mecab-ko-dic은 오픈 소스 형태소 분석 엔진인 MeCab을 사용하여, 한국어 형태소 분석을 하기 위한 프로젝트입니다. 말뭉치 학습과 사전 목록은 모두 21세기 세종계획의 성과물을 사용하였습니다.
+- https://bitbucket.org/eunjeon/mecab-ko-dic/src/master/
