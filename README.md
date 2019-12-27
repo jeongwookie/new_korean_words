@@ -2,7 +2,7 @@
 
 한국어 분석을 위하여 만들어진 신조어 코퍼스 입니다.
 약 9천만건의 NAVER 뉴스를 크롤링하고, 그 중 뉴스 헤드라인에서 모든 명사를 추출하였습니다.
-명사 추출은 비지도학습 기반의 Noun Extractor을 제공하는 `soynlp` 패키지로 진행되었으며, 신조어 판별을 위한 baseline으로 세종 코퍼스 (Sejong Corpus) 명사들을 사용하였습니다.
+명사 추출은 비지도학습 기반의 Noun Extractor을 제공하는 `soynlp` 패키지로 진행되었으며, 신조어 판별을 위한 baseline으로 세종 코퍼스 (Sejong Corpus) 명사들을 사용하였습니다. 데이터는 원 단어장 JSON 및 형태소 분석기에 빌드 가능한 형태 등 총 2가지로 제공합니다.
 
 ## Spec
 ### Data
@@ -38,8 +38,8 @@ Baseline으로 사용된 세종 코퍼스는 `Mecab` 형태소 분석기 내의 
 $ git clone https://github.com/jeongwookie/new_korean_words.git
 ~~~
 
-### Python Dictionary
-첫 번째는 key가 단어이고 이에 대응하는 value가 속성인 python dictionary 형태 입니다.
+### 신조어 코퍼스 JSON 
+첫 번째는 key가 단어이고 이에 대응하는 value가 속성인 python dictionary 형태 입니다. `new_word_corpus_132799_key_noun.json` 이라는 이름으로 제공됩니다. 각 속성에 대해서는 아래 설명을 달아 놓았습니다.
 
 - week : 해당 단어가 추출된 주
 - frequency : 해당 단어가 해당 주에서 언급된 빈도수
@@ -48,4 +48,33 @@ $ git clone https://github.com/jeongwookie/new_korean_words.git
 - exact_date : 해당 단어가 문서 내에서 처음 발견된 날짜
 
 간단하게 예시를 들어보면 아래와 같습니다.
+
+~~~python
+with open(FILE_PATH) as file: # 코퍼스를 다운로드 받은 곳을 FILE_PATH 으로 지정   
+    NEW_WORDS = json.load(file)
+    
+print(NEW_WORDS["알파고"])
+# {'week': '20160125',
+#  'frequency': '19',
+#  'noun_score': '1.0',
+#  'sid': '106',
+#  'exact_date': '20160128'}
+
+print(NEW_WORDS["리그오브레전드"])
+# {'week': '20111212',
+#  'frequency': '15',
+#  'noun_score': '1.0',
+#  'sid': '105',
+#  'exact_date': '20111212'}
+
+print(NEW_WORDS["하스스톤"])
+# {'week': '20131223',
+#  'frequency': '6',
+#  'noun_score': '1.0',
+#  'sid': '105',
+#  'exact_date': '20131223'}
+~~~
+
+### Mecab 사용자 사전 추가
+
 
