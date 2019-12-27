@@ -26,5 +26,26 @@ Baseline으로 사용된 세종 코퍼스는 `Mecab` 형태소 분석기 내의 
 
 마지막으로, 준비해 둔 세종 코퍼스와 비교하면서 각 주별 신조어를 저장하였습니다. 결과의 일부를 빈도수 기준으로 정렬하였을 때 아래와 같은 결과가 나타납니다.
 
-<img src="https://user-images.githubusercontent.com/25416425/71515586-506b7f00-28e7-11ea-80e3-d70da3a44960.png" width="450">
+<img src="https://user-images.githubusercontent.com/25416425/71515586-506b7f00-28e7-11ea-80e3-d70da3a44960.png" width="550">
+
+## Guide
+### Usage guide
+
+현재 버전에서는 미리 추출해 놓은 신조어 코퍼스를 다운로드 하는 것만 가능합니다. 추후 자동으로 사전을 업데이트 하는 코드를 추가할 예정입니다.
+신조어 코퍼스는 두 가지 버전으로 제공됩니다. 본 저장소를 clone 해서 사용하시면 됩니다.
+
+~~~
+$ git clone https://github.com/jeongwookie/new_korean_words.git
+~~~
+
+### Python Dictionary
+첫 번째는 key가 단어이고 이에 대응하는 value가 속성인 python dictionary 형태 입니다.
+
+- week : 해당 단어가 추출된 주
+- frequency : 해당 단어가 해당 주에서 언급된 빈도수
+- noun_score : soynlp의 noun extractor에서 제공하는 명사 수치
+- sid : NAVER 뉴스 카테고리
+- exact_date : 해당 단어가 문서 내에서 처음 발견된 날짜
+
+간단하게 예시를 들어보면 아래와 같습니다.
 
